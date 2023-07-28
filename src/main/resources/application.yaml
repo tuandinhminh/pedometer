@@ -1,0 +1,31 @@
+server:
+  port: 3002
+auth0:
+  audience: http://localhost:3002/
+spring:
+  data:
+    mongodb:
+      database: pedometer
+      port: '27017'
+      host: localhost
+      username: pedometer
+      password: pedometer
+      authentication-database: admin
+      auto-index-creation: true
+  datasource:
+    hikari:
+      maxLifetime: '1800000'
+      connectionTimeout: '30000'
+      idleTimeout: '600000'
+      maximumPoolSize: '100'
+  profiles:
+    active: local
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://identity-dev.jp.auth0.com/
+redis:
+  host: localhost
+  port: 6379
+
